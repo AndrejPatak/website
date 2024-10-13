@@ -18,7 +18,8 @@
 
 #category{
     --button-padding: 15px;
-    padding: 10px;
+    --button-radius: 10px;
+    padding: 0px;
     /* border: 1px solid peru; */
     
     display: flex;
@@ -34,8 +35,8 @@
     }
 
     & > :nth-child(1){
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
+        border-top-left-radius: var(--button-radius);
+        border-bottom-left-radius: var(--button-radius);
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
         padding: var(--button-padding);
@@ -47,8 +48,8 @@
     }
 
     & > :nth-child(5){
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-top-right-radius: var(--button-radius);
+        border-bottom-right-radius: var(--button-radius);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         padding: var(--button-padding);
@@ -58,18 +59,18 @@
 
 
 #stuff{
-    /* border: 1px solid yellow; */
+    /* border: 1px solid yellow;  */
     /* width: max(calc(70vw - 50px), 450px); */
     width: 90vw;
     height: fit-content;
-    padding-top: 1rem;
+    
     margin-bottom: 2rem;
     
     & > .buttons{
         width: 100%;
         justify-content: center;
         display: flex;
-        margin-top: 10px;
+        
 
         & > :nth-child(1){
             border-top-left-radius: 20px;
@@ -107,41 +108,65 @@
 }
 
 #content{
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    overflow-x: auto;
+
+    /* border: 1px violet solid; */
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
     scroll-behavior: smooth;
 
-    padding: 20px;
-    
-    
-    height: 65vh;
-    & > *{
-        margin-right: 20px;
-    }  
+    height: 65dvh;
+       
 }
 
 
 
+.image-row{
+    display: flex;
+    justify-content: center;        
 
+    align-items: center;
 
+    height: fit-content;
+    width: 100%;
 
+    /* border-radius: 10px; */
+    
+    overflow: hidden;
+
+    margin-bottom: 2rem;
+
+    & > *:nth-last-child(1){
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    & > *:nth-child(1){
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    /* border: 1px rgb(255, 0, 0) solid; */
+    
+    /* overflow-y: hidden; */
+}
 
 
 .image-item{
-    height: 100%;
-    min-width: 400px;
+    height: 50dvh;
+    max-width: 100%;
+    min-width: calc(100% / 5);
 
     overflow: hidden;
     position: relative;
-    border-radius: 15px;
+    
+    
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    filter: drop-shadow(0 0 10px black);
+    /* filter: drop-shadow(0 0 5px rgba(33, 24, 0, 0.674)); */
 
     & > img{
         object-fit: cover;

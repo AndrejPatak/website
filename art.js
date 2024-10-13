@@ -1,7 +1,12 @@
+let drawingsButton = document.getElementById("drawings")
+let photoButton = document.getElementById("photos")
+let webButton = document.getElementById("web")
+
 let content = document.getElementById("content")
 
 let currentPage = "photos"
 
+let rows = 1
 
 let loadMore = document.getElementById("loadMore")
 let unloadAll = document.getElementById("unloadAll")
@@ -37,41 +42,69 @@ let photos = [
 
 ]
 
+let arts = [
+    "https://i.postimg.cc/pLZPwRwL/ekv-Shirt-Compressed.png",
+    "https://i.postimg.cc/TYndcrQm/Wallpaper-EKV.png",
+    "https://i.postimg.cc/pVwV80QR/ViewIMG.png"
+    
+]
+
+let workingImages = photos
+
+let imageItems = []
 let allPhotosLoaded = false
-let images = []
-images = photos
 
 let lastLoadedImage = 0
 
 //loadAllImages() /* not for prod, only for testing */
 
-loadNImages(5)
+//loadNImages(5)
+backToTop.addEventListener('click', scrollToTop)
+
+
+
+addRow()
+
+function addRow(){
+    
+    if(!allPhotosLoaded){
+        content.innerHTML += "<div class='image-row'> </div>"
+        let imageRows = content.getElementsByClassName("image-row")
+        loadNImages(5, imageRows[imageRows.length - 1])
+    }
+}
 
 function unloadAllImages(){
-    const items = document.querySelectorAll('.image-item');
-    items.forEach(item => {
+    const itemsList = document.querySelectorAll('.image-item');
+    const rowsList = document.querySelectorAll('.image-row')
+    itemsList.forEach(item => {
         item.remove();
+        }
+    )
+    rowsList.forEach(row => {
+        row.remove()
         }
     )
     lastLoadedImage = 0
     allPhotosLoaded = false
+    imageItems = []
 }
 
-function loadNImages(n){
+function loadNImages(n, where){
     let end = n + lastLoadedImage
     let start = lastLoadedImage - 1
     for(lastLoadedImage; lastLoadedImage < end; lastLoadedImage++){
         
         console.log("Loaded image: ", lastLoadedImage)
-        if(photos[lastLoadedImage]){
+        if(workingImages[lastLoadedImage]){
             if(allPhotosLoaded === false){
-                content.innerHTML += "<div class='image-item'>\
+                where.innerHTML += "<div class='image-item'>\
                 <div class='overlay'>\
                 </div>\
                 <div class='links'>\
-                <a href='" + photos[lastLoadedImage] + "' class='openImage'> <i class='fa-solid fa-up-right-from-square'></i></a>\
+                <a href='" + workingImages[lastLoadedImage] + "' class='openImage'> <i class='fa-solid fa-up-right-from-square'></i></a>\
                 </div>\
-                <img src='" + photos[lastLoadedImage] + "' width='100%' >\
+                <img src='" + workingImages[lastLoadedImage] + "' width='100%' >\
                 </div>"
             }
             
@@ -86,9 +119,9 @@ function loadNImages(n){
         const targetElement = content.children[start]; // The first newly loaded element
         
         if (targetElement) {
-            const offsetLeft = targetElement.offsetLeft;
+            const offsetBottom = targetElement.offsetBottom;
             content.scrollTo({
-                left: offsetLeft, // Scroll to the horizontal position of the target element
+                bottom: offsetBottom, // Scroll to the horizontal position of the target element
                 behavior: "smooth" // Enables smooth scrolling
             });
         }
@@ -97,20 +130,14 @@ function loadNImages(n){
     console.log("Last loaded image index: ", lastLoadedImage)
 }
 
-
-
-
-
 function loadAllImages(){ // function for testing.
     
-    for(lastLoadedImage; lastLoadedImage < photos.length; lastLoadedImage++){
+    for(lastLoadedImage; lastLoadedImage < workingImages.length; lastLoadedImage++){
         // console.log("Loaded image: ", i)
-        content.innerHTML += "<div class='image-item'><div class='overlay'></div><img src='" + photos[lastLoadedImage] + "' width='100%'><div class='underlay'><i class='fa-solid fa-spinner'></i></div></div>"
+        content.innerHTML += "<div class='image-item'><div class='overlay'></div><img src='" + workingImages[lastLoadedImage] + "' width='100%'><div class='underlay'><i class='fa-solid fa-spinner'></i></div></div>"
     }
     console.log("lastLoadedImage: ",lastLoadedImage)
 }
-
-backToTop.addEventListener('click', scrollToTop)
 
 function scrollToTop(){
     /* document.body.scrollTop = 0; // For Safari
@@ -127,9 +154,28 @@ function scrollToTop(){
     
 }
 
+function updateImages(to){
+    const imageItems = content.getElementsByClassName("image-item")
+   /* for(let i = 0; i < imageItems.length; i++){
+    if(i + 1 > to.length){
+        imageItems[i].remove()
+    }else{
+        imageItems[i].getElementsByTagName("img")[0].src = to[i]
+    }
+    
+   } */
+    unloadAllImages()
+    workingImages = to
+    addRow()
+}
+
+
 unloadAll.addEventListener("click", unloadAllImages)
 
 loadMore.addEventListener('click', function(){
-    loadNImages(5)
+    addRow()
 })
 
+drawingsButton.addEventListener("click", function(){updateImages(arts)})
+webButton.addEventListener("click", function(){updateImages(photos)})
+photoButton.addEventListener("click", function(){updateImages(photos)})
