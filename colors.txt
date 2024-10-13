@@ -1,0 +1,26 @@
+### LIGHT THEME
+
+background close to white
+text close to black
+subtext (text but darker/faded)
+
+accent
+accent text
+
+button background (bg)
+button hover    (essentially bg but lighter/darker)
+button accent (based on accent)
+
+### END LIGHT THEME
+
+### DARK THEME
+background similar to dark grey
+text close to white (maybe with a tinge of accent or background)
+subtext (text but darker/faded)
+
+accent
+accent text
+
+button background (bg)
+button hover    (essentially bg but lighter)
+button accent (based on accent)

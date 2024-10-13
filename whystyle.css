@@ -1,0 +1,38 @@
+:root{
+    --title-font-size: 2rem;
+    --text-color: #E9F1F7;
+    --subtext-color: #c3cdd4;
+    --background-color: #131B23;
+    --divider-color: #535353b6;
+    --button-color: #bfc1c2;
+    --button-text-color: black;
+    --button-hover-color: #fdfdfd;
+    --content-button-size: 2rem;
+    
+    font-family: 'IBM Plex Mono', monospace;
+
+    transition: all .5s;
+    font-weight: 450;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid white; */
+    /* overflow-y: hidden; */
+}
+
+
+
+.title{
+    font-size: var(--title-font-size);
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+}
+.description{
+    font-size: calc(var(--title-font-size) - .5rem);
+}
