@@ -64,6 +64,7 @@ backToTop.addEventListener('click', scrollToTop)
 
 
 addRow()
+addRow()
 
 function addRow(){
     
@@ -102,7 +103,7 @@ function loadNImages(n, where){
                 <div class='overlay'>\
                 </div>\
                 <div class='links'>\
-                <a href='" + workingImages[lastLoadedImage] + "' class='openImage'> <i class='fa-solid fa-up-right-from-square'></i></a>\
+                <a href='" + workingImages[lastLoadedImage] + "' class='openImage'>view full image</a>\
                 </div>\
                 <img src='" + workingImages[lastLoadedImage] + "' width='100%' >\
                 </div>"
