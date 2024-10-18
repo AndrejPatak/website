@@ -80,6 +80,7 @@
             text-align: center;
         }
 
+        padding-top: var(--controls-padding);
         width: 100%;
         height: fit-content;
         justify-content: left;

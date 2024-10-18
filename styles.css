@@ -51,7 +51,7 @@ body{
     margin-top: 0rem;
     
     min-height: calc(100vh - 6rem);
-    padding-top: 3rem;
+    
     height: fit-content;
     display: flex;
     flex-direction: column;
