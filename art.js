@@ -63,15 +63,21 @@ backToTop.addEventListener('click', scrollToTop)
 
 
 
-addRow()
-addRow()
+addRow(false)
+addRow(false)
 
-function addRow(){
-    
+function addRow(scroll){
+    let addedRow;
     if(!allPhotosLoaded){
         content.innerHTML += "<div class='image-row'> </div>"
+        addedRow = document.getElementsByClassName("image-row")[document.getElementsByClassName("image-row").length - 1]
         let imageRows = content.getElementsByClassName("image-row")
         loadNImages(5, imageRows[imageRows.length - 1])
+    }
+    if(scroll && addedRow){
+        addedRow.scrollIntoView()
+    }else{
+        document.getElementsByClassName("image-row")[document.getElementsByClassName("image-row").length - 1].scrollIntoView()
     }
 }
 
@@ -93,7 +99,6 @@ function unloadAllImages(){
 
 function loadNImages(n, where){
     let end = n + lastLoadedImage
-    let start = lastLoadedImage - 1
     for(lastLoadedImage; lastLoadedImage < end; lastLoadedImage++){
         
         console.log("Loaded image: ", lastLoadedImage)
@@ -105,7 +110,7 @@ function loadNImages(n, where){
                 <div class='links'>\
                 <a href='" + workingImages[lastLoadedImage] + "' class='openImage'>view full image</a>\
                 </div>\
-                <img src='" + workingImages[lastLoadedImage] + "' width='100%' >\
+                <img loading='lazy' src='" + workingImages[lastLoadedImage] + "' width='100%' >\
                 </div>"
             }
             
@@ -115,17 +120,6 @@ function loadNImages(n, where){
             break;
         }
         
-    }
-    if (start < lastLoadedImage) { // Only if new images were actually loaded
-        const targetElement = content.children[start]; // The first newly loaded element
-        
-        if (targetElement) {
-            const offsetBottom = targetElement.offsetBottom;
-            content.scrollTo({
-                bottom: offsetBottom, // Scroll to the horizontal position of the target element
-                behavior: "smooth" // Enables smooth scrolling
-            });
-        }
     }
     
     console.log("Last loaded image index: ", lastLoadedImage)
@@ -143,15 +137,7 @@ function loadAllImages(){ // function for testing.
 function scrollToTop(){
     /* document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera */
-    const targetElement = content.children[0]; // The first newly loaded element
-        
-    if (targetElement) {
-        const offsetleft = targetElement.offsetLeft;
-        content.scrollTo({
-            left: offsetleft - 500, // Scroll to the horizontal position of the target element
-            behavior: "smooth" // Enables smooth scrolling
-        });
-    }
+    document.querySelector(".image-row").scrollIntoView()
     
 }
 
@@ -174,7 +160,7 @@ function updateImages(to){
 unloadAll.addEventListener("click", unloadAllImages)
 
 loadMore.addEventListener('click', function(){
-    addRow()
+    addRow(true)
 })
 
 drawingsButton.addEventListener("click", function(){updateImages(arts)})
