@@ -1,6 +1,6 @@
 let mainButton = document.getElementById("main")
 let artButton = document.getElementById("art")
-let whyButton = document.getElementById("why")
+let badgesButton = document.getElementById("badges")
 
 
 
@@ -42,8 +42,8 @@ mainButton.addEventListener('click', function(){
     redirect("index.html")
 })
 
-whyButton.addEventListener('click', function(){
-    redirect("why.html")
+badgesButton.addEventListener('click', function(){
+    redirect("badges.html")
 })
 
 artButton.addEventListener('click', function(){

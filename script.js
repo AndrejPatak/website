@@ -1,8 +1,5 @@
 let contentPage = document.getElementById("contentPage")
 
-
-
-
 let screenContent = document.getElementById("screenContent")
 let screenItems = document.getElementById("screenItems")
 let closeButton = document.querySelector(".close")
@@ -17,9 +14,9 @@ var currentImage = 0
 
 let selectorImages = []
 
-const birdieDescription = "Birdie Battle is a solo project I developed in the span of a month\
-                    Its a small game, one on one multiplayer, 2 maps 6 characters and\
-                    a handfull of weapons to use. Please chek it out on GitHub and Itch io"
+const birdieDescription = "Birdie Battle is a solo project I developed in the span of a month.\
+                    It's a small game, one on one multiplayer, 2 maps 6 characters and\
+                    a handfull of weapons to use. Please chek it out on <a href='https://github.com/AndrejPatak/BirdieBattle'>GitHub</a> and Itch.io (coming soon)"
 
 let mikeImages = [
     "./mike/main_menu.png",

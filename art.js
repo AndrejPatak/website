@@ -76,7 +76,7 @@ function addRow(scroll){
     }
     if(scroll && addedRow){
         addedRow.scrollIntoView()
-    }else{
+    }else if(scroll){
         document.getElementsByClassName("image-row")[document.getElementsByClassName("image-row").length - 1].scrollIntoView()
     }
 }

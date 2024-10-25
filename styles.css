@@ -13,6 +13,9 @@
     --content-max-width: 68vw;
     --content-min-width: max(67vw, 45vh);
     
+    --transition: background-color 1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 1s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 1s cubic-bezier(0.19, 1, 0.22, 1);
 
     font-family: 'IBM Plex Mono', monospace;
 
@@ -21,9 +24,7 @@
 }
 
 *{
-    transition: background-color 1s cubic-bezier(0.19, 1, 0.22, 1),
-    color 1s cubic-bezier(0.19, 1, 0.22, 1),
-    border-color 1s cubic-bezier(0.19, 1, 0.22, 1);;
+    transition: var(--transition)
 }
 
 .space-grotesk {
@@ -50,7 +51,7 @@ body{
 .page{
     margin-top: 0rem;
     
-    min-height: calc(100vh - 6rem);
+    min-height: calc(100vh - 3rem);
     
     height: fit-content;
     display: flex;
@@ -209,8 +210,14 @@ footer{
     width: 100vw;
     min-height: 3rem;
     height: fit-content;
-    background:#0d0d0c;
+    background:#25242c;
+    
     display: flex;
+    
+    & > *{
+        flex-shrink: 1;
+    }
+
     align-items: center;
     justify-content: center;
     color: white;
@@ -219,35 +226,44 @@ footer{
         margin-right: .5rem;
     }
 
-    & > #links{
+    
+}
 
-        color: white;
+.footer-title{
+    text-align: center;
+    width: 100%;
+}
 
-        min-width: 100px;
-        width: fit-content;
-        height: fit-content;
+.footer-section{
+    /* border: 1px solid lime; */
+    color: white;
 
-        padding: .2rem;
+    min-width: 100px;
+    width: fit-content;
+    height: fit-content;
 
-        & > #title{
-            text-align: center;
-            width: 100%;
-        }
-        & > #content{
-            
-            display: grid;
-            justify-content: center;
-            align-items: center;
+    padding: .2rem;
+}
 
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+.footer-content{
+    /* border: 1px solid rgb(255, 0, 0); */
+    display: grid;
+    justify-content: center;
+    align-items: center;
 
-            
-        }
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    & > *{
+        color:white;
+        margin: .2rem;
     }
 }
 
-
+#secret{
+    background-color: rgb(32, 29, 44);
+    border-radius: 0;
+    color: white;
+}
 
 button{
     background-color: var(--button-color);
@@ -271,7 +287,6 @@ button{
     justify-content: space-evenly;
     height: max(fit-content, 90vh);
     width: 100%;
-    padding-bottom: 3rem;
     /* border: red 1px solid; */
 }
 
@@ -280,13 +295,13 @@ button{
 #contentPage{
     background: var(--background-alt-color);
     position: relative;
-    margin-left: 15px;
-    margin-bottom: 20px;
+    
     display: none;
     border: solid var(--button-color) 2px;
     border-radius: 10px;
 
-    height: 80vh;
+    height: fit-content;
+    min-height: 55vh;
 
     max-width: var(--content-max-width);
     min-width: var(--content-min-width);
@@ -370,12 +385,11 @@ button{
 
 #screenContent{
     display: flex;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     flex-direction: column;
     align-items: center;
     
-    position: absolute;
 
     text-align: center;
     font-size: 1rem;
@@ -383,11 +397,11 @@ button{
     max-width: 80vw;
     min-width: var(--content-min-width);
 
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 
     overflow-y: scroll;
 
-    padding-bottom: 1rem;
 
     & > .info{     
           
@@ -396,7 +410,7 @@ button{
         flex-direction: column;
         /* border: solid 1px lime; */
         border-radius: 5px;
-        padding: 10px;  
+        padding-bottom: 10px;
         margin: 5px;
     }
 
@@ -409,6 +423,10 @@ button{
         font-size:xx-large;
         text-align: left;
     }
+}
+
+.a{
+    color: white;
 }
 
 .cover{
@@ -468,8 +486,7 @@ button{
             border-bottom-right-radius: 10px;
             border-top-right-radius: 10px;
 
-        }
-        
+        }  
     }
 }
 

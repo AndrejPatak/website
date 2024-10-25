@@ -17,6 +17,30 @@
     font-weight: 450;
 }
 
+.edge-bookend{
+    width: 100%;
+    background-color: var(--button-color);
+    height: 3rem;
+
+    
+
+    padding: 0;
+    margin: 0;
+    
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+
+    left: -100%;
+
+    & > *{
+        text-align: center;
+        color: white;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+    }
+}
 
 #category{
     --button-padding: 15px;
@@ -35,22 +59,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        flex-shrink: 10;
     }
 
-    & > :nth-child(1){
-        border-top-left-radius: var(--button-radius);
-        border-bottom-left-radius: var(--button-radius);
+    & > :nth-child(4){
+       /*  border-top-left-radius: var(--button-radius);
+        border-bottom-left-radius: var(--button-radius); */
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
         padding: var(--button-padding);
     }
 
-    & > :nth-child(3){
+    & > :nth-child(6){
         border-radius: 0;
         padding: var(--button-padding);
     }
 
-    & > :nth-child(5){
+    & > :nth-child(8){
         border-top-right-radius: var(--button-radius);
         border-bottom-right-radius: var(--button-radius);
         border-top-left-radius: 0;
@@ -67,6 +95,7 @@
     width: 90vw;
     height: fit-content;
     
+    position: relative;
     /* margin-bottom: 2rem; */
     
     & > .buttons{
@@ -111,12 +140,17 @@
 
 }
 
+.button-background{
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+}
 
 .title{
     font-size: var(--title-font-size);
     font-weight: 500;
     text-align: center;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 #content{

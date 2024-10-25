@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bery's website</title>
+
     <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,36 +18,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <script src="navbar.js" defer></script>
-
+    
 </head>
 
-
 <body>
+
+    <nav class="topBar ">
+        <div class="triangle-left" id="left"></div>
+        <!-- <div class="bookend-left"></div> -->
+        <div class="buttons">
     
-        <nav class="topBar ">
-            <div class="triangle-left" id="left"></div>
-            <!-- <div class="bookend-left"></div> -->
-            <div class="buttons">
-
-                <button id="main">main</button>
-
-                <div class="divider"></div>
-
-                <button id="art">art</button>
-
-
-                <div class="divider"></div>
-
-                <button id="why">why?</button>
-                <div class="divider"></div>
-
-                <button id="theme">dark</button>
-                
-            </div>
-            <div class="triangle-right" id="right"></div>
-            <!-- <div class="bookend-right"></div> -->
-        </nav>
+            <button id="main">main</button>
+    
+            <div class="divider"></div>
+    
+            <button id="art">art</button>
+    
+    
+            <div class="divider"></div>
+    
+            <button id="badges">badges</button>
+            <div class="divider"></div>
+    
+            <button id="theme">dark</button>
+            
+        </div>
+        <div class="triangle-right" id="right"></div>
+        <!-- <div class="bookend-right"></div> -->
+    </nav>
     
 <div class="page">
     <div class="split">
@@ -118,26 +118,17 @@
                     </div>
             
                 </div>
-                        
-                            
-                            <!-- <img src="./birdie/main_menu.jpg" alt="Biride Battle main menu">
-                            <img src="./birdie/factory map.png" alt="">
-                            <img src="./birdie/city_map.png" alt="">
-                            <img src="./birdie/EndScreen.png" alt=""> -->
-                <div id="imageSelector">                          
+                <div id="imageSelector">
                     <div id="imageSelector-image">
                     </div>
                                 
                     <div class="buttons">
                                     
-                        <i class="fa-solid fa-chevron-left left">                
-                        </i>
+                        <i class="fa-solid fa-chevron-left left"></i>
                         
                         <div class="divider"></div>
                                     
-                        <i class="fa-solid fa-chevron-right right">
-                                        
-                        </i>
+                        <i class="fa-solid fa-chevron-right right"></i>
                     </div>
 
                 </div>
@@ -152,21 +143,29 @@
     
 
     <footer>
-        <div id="links">
-            <div id="title">links:</div>
-
-            <div id="content">
+        <div id="links" class="footer-section">
+            <div class="footer-title">links:</div>
+            <div class="footer-content">
                 <a href="https://www.youtube.com/@aqua-bery">youtube</a>
                 <a href="https://mastodon.world/@bery">mastodon</a>
                 <a href="https://www.instagram.com/thewitchandrea/">instagram</a>
-                
             </div>
-            
+        </div>
+
+        <div id="extra" class="footer-section">
+            <div class="footer-title">extra:</div>
+            <div class="footer-content">
+                <a href="why.html">why?</a>
+                <button id="secret">...</button>
+            </div>
         </div>
         <div id="copyright">copyright: nothing, nowhere, never</div>
     </footer>
+
     
-    <script src="script.js"></script>
+    <script src="navbar.js" defer></script>
+    <script src="script.js" defer></script>
+    
     
 </body>
 </html>
