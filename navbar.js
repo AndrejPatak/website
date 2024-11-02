@@ -94,7 +94,7 @@ function setTheme(theme){
             root.style.setProperty("--subtext-color", "#686D76")
             root.style.setProperty("--button-color", "#6e453c")
             root.style.setProperty("--button-text-color", "#eae2ca")
-            root.style.setProperty("--button-hover-color", "#DC5F00")
+            root.style.setProperty("--button-hover-color", "#8F9779")
             break;
     }     
 }
