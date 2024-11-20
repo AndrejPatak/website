@@ -18,10 +18,17 @@ const birdieDescription = "Birdie Battle is a solo project I developed in the sp
                     It's a small game, one on one multiplayer, 2 maps 6 characters and\
                     a handfull of weapons to use. Please chek it out on <a href='https://github.com/AndrejPatak/BirdieBattle'>GitHub</a> and Itch.io (coming soon)"
 
-let mikeImages = [
-    "./mike/main_menu.png",
-    "./mike/view.png",
-    "./mike/loser.png"
+const glyphDescription = "[GLYPH_NODE] is an open source racing game developed for vimjam5 within 10 days. \
+                          Speedrun across the security layers of a secure system to avoid beeing detected by the antiviurs.\
+                          Available on <a href='https://beryboo.itch.io/glyph-node'>itch.io</a> for free!\
+                          \nSource code is available on github <a href='https://github.com/AndrejPatak/glyph_node'>here</a>"
+
+let glyphImages = [
+    "./glyph_node/glyph1.png",
+    "./glyph_node/glyph2.png",
+    "./glyph_node/glyph3.png",
+    "./glyph_node/glyph4.png",
+    "./glyph_node/glyph5.png"
     ]
 let birdieImages = [
     "./birdie/main_menu.jpg",
@@ -37,7 +44,7 @@ function preloadImages(images){
     }
 }
 
-preloadImages(mikeImages)
+preloadImages(glyphImages)
 preloadImages(birdieImages)
 
 
@@ -49,10 +56,10 @@ preloadImages(birdieImages)
 
 
 
-let mikeButton = document.getElementById("mike")
+let glyphButton = document.getElementById("glyph")
 let birdieButton = document.getElementById("birdie")
 
-mikeButton.addEventListener('click', function(){setContentPage("Mike")})
+glyphButton.addEventListener('click', function(){setContentPage("Glyph")})
 birdieButton.addEventListener('click',  function(){setContentPage("Birdie")})
 // to pass an arg into an eventListener do something like:
 //     button.addEventListener('click', function(){contentPageSay("lol")})
@@ -85,13 +92,13 @@ function setContentPage(thing)
 
         default:
             break;
-        case "Mike":
-            if( currentImage > mikeImages.length){
-                currentImage = mikeImages.length - 1
+        case "Glyph":
+            if( currentImage > glyphImages.length){
+                currentImage = glyphImages.length - 1
             }
-            title.innerHTML = "Magic Mike"
-            description.innerHTML = "Magic mike is cool ig... I aint finishing it lmaooo"
-            selectorImages = mikeImages
+            title.innerHTML = "[GLYPH_NODE]"
+            description.innerHTML = glyphDescription
+            selectorImages = glyphImages
             break;
 
         case "Birdie":

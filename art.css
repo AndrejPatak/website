@@ -1,4 +1,5 @@
 :root{
+    
     --title-font-size: 2rem;
     --text-color: #E9F1F7;
     --subtext-color: #c3cdd4;
@@ -17,12 +18,15 @@
     font-weight: 450;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .edge-bookend{
     width: 100%;
     background-color: var(--button-color);
     height: 3rem;
 
-    
 
     padding: 0;
     margin: 0;
@@ -43,24 +47,27 @@
 }
 
 #category{
+    --font-size: 1.1rem;
     --button-padding: 15px;
     --button-radius: 10px;
     padding-top: var(--controls-padding);
     padding-bottom: var(--controls-padding);
     /* border: 1px solid peru; */
     
+
+
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
     & > *{
-        font-size: 1.1rem;
+        font-size: var(--font-size);
         height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        flex-shrink: 10;
+        /* flex-shrink: 10; */
     }
 
     & > :nth-child(4){
@@ -86,6 +93,7 @@
         padding: var(--button-padding);
     }
 }
+
 
 
 
@@ -305,3 +313,21 @@
 }
 
 
+
+@media only screen and (max-width: 450px) {
+    [class*="edge-bookend"]{
+        width: 10%;
+        left: -20%;
+    }
+    #category {
+        margin-left: -30px;
+    }
+
+    #category > * {
+        font-size: 0.9rem; /* Example font size change */
+    }
+    #stuff > .buttons > button{
+        font-size: .8rem; /* Example font size change */
+        
+    }
+}

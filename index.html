@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,22 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">                   
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -27,120 +32,123 @@
         <div class="triangle-left" id="left"></div>
         <!-- <div class="bookend-left"></div> -->
         <div class="buttons">
-    
+
             <button id="main">main</button>
-    
+
             <div class="divider"></div>
-    
+
             <button id="art">art</button>
-    
-    
+
+
             <div class="divider"></div>
-    
+
             <button id="badges">badges</button>
             <div class="divider"></div>
-    
+
             <button id="theme">dark</button>
-            
+
         </div>
         <div class="triangle-right" id="right"></div>
         <!-- <div class="bookend-right"></div> -->
     </nav>
-    
-<div class="page">
-    <div class="split">
-        <div id="leftSplit">
-            <div id="leftPanel">
-                <div id="aboutMe">
-                    <div id="identifier">
-                        <div id="profilePic"></div>
-                        <div id="name">
-                            bery
-                            <div class="subTitle">aka aquabery</div>
-                        </div>  
 
+    <div class="page">
+        <div class="split">
+            <div id="leftSplit">
+                <div id="leftPanel">
+                    <div id="aboutMe">
+                        <div id="identifier">
+                            <div id="profilePic"></div>
+                            <div id="name">
+                                bery
+                                <div class="subTitle">aka aquabery</div>
+                            </div>
+
+                        </div>
+
+
+                        <p class="mainText">Hello! I'm Bery, a web-dev, game-dev and music enjoyer</p>
                     </div>
-                    
-                    
-                    <p class="mainText">Hello! I'm Bery, a web-dev, game-dev and music enjoyer</p>
+
+
+                    <label for="projects">My games:
+                        <div id="projects">
+
+                            <ul>
+                                <li>
+                                    <div> Birdie Battle</div> <button id="birdie"><i
+                                            class="fa-solid fa-up-right-from-square projectButton"></i></button>
+                                </li>
+                                <li>
+                                    <div>[GLYPH_NODE]</div> <button id="glyph"><i
+                                            class="fa-solid fa-up-right-from-square projectButton"></i></button>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </label>
+                    <br>
+                    <div id="contact">
+                        Contact:
+                        <ul>
+                            <li>
+                                <button id="mastodon"><i class="fa-brands fa-mastodon"></i></button>
+                            </li>
+                            <li>
+                                <button id="youtube"><i class="fa-brands fa-youtube"></i></button>
+                            </li>
+                            <li>
+                                <button id="instagram"><i class="fa-brands fa-instagram"></i></button>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <script src="contact.js"></script>
                 </div>
 
-            
-                <label for="projects">My games:
-                <div id="projects">
-                    
-                    <ul>
-                        <li>
-                        <div> Birdie Battle</div> <button id="birdie"><i class="fa-solid fa-up-right-from-square projectButton"></i></button>
-                        </li>
-                        <li>
-                            Magic Mike <button id="mike" ><i class="fa-solid fa-up-right-from-square projectButton"></i></button>
-                        </li>
-                    </ul>
-                    
-                        
-                </div>
-                </label>
-                <br>
-                <div id="contact">
-                    Contact:
-                    <ul>
-                        <li>
-                            <button id="mastodon"><i class="fa-brands fa-mastodon"></i></button>
-                        </li>
-                        <li>
-                            <button id="youtube"><i class="fa-brands fa-youtube"></i></button>
-                        </li>
-                        <li>
-                            <button id="instagram"><i class="fa-brands fa-instagram"></i></button>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <script src="contact.js"></script>
             </div>
 
-        </div>
 
-       
-        <div id="contentPage">
-            <i class="fa-solid fa-xmark close"></i>
-            <div id="screenContent">
-                
-                <div class="info"> <!-- item number 1, cuz a new line counts as a child node for some ridonculus reason. -->
-                    <div class="title">
-                        Birdie Battle
+            <div id="contentPage">
+                <i class="fa-solid fa-xmark close"></i>
+                <div id="screenContent">
+
+                    <div class="info">
+                        <!-- item number 1, cuz a new line counts as a child node for some ridonculus reason. -->
+                        <div class="title">
+                            Birdie Battle
+                        </div>
+
+                        <div class="description">Birdie Battle is a solo project I developed in the span of a month
+                            Its a small game, one on one multiplayer, 2 maps 6 characters and
+                            a handfull of weapons to use. Please chek it out on GitHub and Itch io
+                        </div>
+
                     </div>
-                           
-                    <div class="description">Birdie Battle is a solo project I developed in the span of a month
-                        Its a small game, one on one multiplayer, 2 maps 6 characters and 
-                        a handfull of weapons to use. Please chek it out on GitHub and Itch io 
-                    </div>
-            
-                </div>
-                <div id="imageSelector">
-                    <div id="imageSelector-image">
-                    </div>
-                                
-                    <div class="buttons">
-                                    
-                        <i class="fa-solid fa-chevron-left left"></i>
-                        
-                        <div class="divider"></div>
-                                    
-                        <i class="fa-solid fa-chevron-right right"></i>
+                    <div id="imageSelector">
+                        <div id="imageSelector-image">
+                        </div>
+
+                        <div class="buttons">
+
+                            <i class="fa-solid fa-chevron-left left"></i>
+
+                            <div class="divider"></div>
+
+                            <i class="fa-solid fa-chevron-right right"></i>
+                        </div>
+
                     </div>
 
-                </div>
-                    
-                
-            </div> <!-- Screen Content close -->
 
-                
-        </div> <!-- Content page close -->
-    </div><!-- Split close -->
-</div> <!-- page close -->
-    
+                </div> <!-- Screen Content close -->
+
+
+            </div> <!-- Content page close -->
+        </div><!-- Split close -->
+    </div> <!-- page close -->
+
 
     <footer>
         <div id="links" class="footer-section">
@@ -159,13 +167,17 @@
                 <button id="secret">...</button>
             </div>
         </div>
-        <div id="copyright">copyright: nothing, nowhere, never</div>
+        <div id="copyright" class="footer-section">
+            <div class="footer-title">copyright:</div>
+           <div class="footer-content"><div>not me (2024)</div></div>
+        </div>
     </footer>
 
-    
+
     <script src="navbar.js" defer></script>
     <script src="script.js" defer></script>
-    
-    
+
+
 </body>
+
 </html>
