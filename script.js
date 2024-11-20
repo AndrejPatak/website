@@ -21,7 +21,7 @@ const birdieDescription = "Birdie Battle is a solo project I developed in the sp
 const glyphDescription = "[GLYPH_NODE] is an open source racing game developed for vimjam5 within 10 days. \
                           Speedrun across the security layers of a secure system to avoid beeing detected by the antiviurs.\
                           Available on <a href='https://beryboo.itch.io/glyph-node'>itch.io</a> for free!\
-                          \nSource code is available on github <a href='https://github.com/AndrejPatak/glyph_node'>here</a>"
+                          \nSource code is available on github <a href='https://github.com/AndrejPatak/glyph-racer'>here</a>"
 
 let glyphImages = [
     "./glyph_node/glyph1.png",
